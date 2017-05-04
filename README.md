@@ -4,7 +4,7 @@ This is a greasmonkey script that modifies glassdoor‘s excellent job search.
 
 Each job post gets a "filter company" button added to it. If clicked, the post’s company is completely hidden from this and all future searches.
 
-Note: It is in working condition, but rough around the edges.  I intend to add more console logging (for debugging purposes) and cleanup the web api to adhere to more closely follow RESTful precepts.
+<i>Note: It is in working condition, but rough around the edges.  I intend to add more console logging (for debugging purposes) and cleanup the web api to adhere to more closely follow RESTful precepts.</i>
 
 Requirements:
 1) Greasemonkey (a firefox plugin)
@@ -15,10 +15,10 @@ Steps to get this script working:
 2) Place contents of the 'web' folder into a folder being served by the http server
 3) Run the sql file (sqlImport.sql) in your mysql database to add the 'filtered' table used by this script
 4) Modify the 'dbConnect.inc' file in the http server folder. Set the variables to connect to your mysql database:
-     $host - The domain, url, etc (along with port if not standard)
-     $username - The username to use to connect to the database
-     $password - The password to use to connect to the database
-     $database - The database in which the 'sqlImport.sql' script was run (contains the 'filtered' table)
+     - $host - The domain, url, etc (along with port if not standard)
+     - $username - The username to use to connect to the database
+     - $password - The password to use to connect to the database
+     - $database - The database in which the 'sqlImport.sql' script was run (contains the 'filtered' table)
 5) Modify the greasemonkey script (glassdoor_companyFilter.user.js).
      Change the variable 'DATA_HOST' (first line of code) to the base url of the http server folder.
 6) Go to http://glassdoor.com and run a JOB search.
