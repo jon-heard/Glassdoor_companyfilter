@@ -4,6 +4,8 @@ This is a greasmonkey script that modifies glassdoor‘s excellent job search.
 
 Each job post gets a "filter company" button added to it. If clicked, the post’s company is completely hidden from this and all future searches.
 
+Note: It is in working condition, but rough around the edges.  I intend to add more console logging (for debugging purposes) and cleanup the web api to adhere to more closely follow RESTful precepts.
+
 Requirements:
 1) Greasemonkey (a firefox plugin)
 2) A http server with php and mysql (to store company names)
