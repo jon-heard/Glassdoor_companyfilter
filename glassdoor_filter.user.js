@@ -55,7 +55,7 @@ function initialize() {
     curItem.prepend(
       "<button class='companyFilter_toggleCompany' onclick='companyFilter_toggleCompany(\"" +
       curCompanyName +
-      "\");'>Filter<br/>company</button>");
+      "\");' style='height: 0%;'>Filter<br/>company</button>");
   });
 
   // Get a list of the filtered companies from the companies list from the jobs list
