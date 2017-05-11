@@ -1,4 +1,4 @@
-// ==UserScript==
+﻿// ==UserScript==
 // @name        glassdoor_companyFilter
 // @namespace   Glassdoor
 // @include     https://www.glassdoor.com/Job/*
