@@ -60,7 +60,7 @@ function initialize() {
 
   // Get a list of the filtered companies from the companies list from the jobs list
   // 1. url for data request
-  var dataRequest_url = DATA_HOST + "/v1/companies/" + companyNamesString;
+  var dataRequest_url = DATA_HOST + "/" + companyNamesString;
   // 2. What to do with request results
   var dataRequest_successFunctionality = function(response) {
     // Get list of companies to filter
@@ -159,7 +159,7 @@ function toggleCompany(title) {
       filtered?"Filtering":"Unfiltering" +
       " company '" + title + "'...");
   item.data("companyFiltered", filtered);
-  var updateUrl = DATA_HOST + "/v1/companies/";
+  var updateUrl = DATA_HOST + "/";
   if (filtered) {
     item.children("button").html("Unfilter<br/>company");
     if (isEnabled) { item.hide(); }
