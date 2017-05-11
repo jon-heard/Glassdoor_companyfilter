@@ -8,7 +8,7 @@
 // @grant       unsafeWindow
 // ==/UserScript==
 
-var DATA_HOST = "http://localhost/glassdoor_companyFilter";
+var DATA_HOST = "http://192.168.1.104/glassdoor_companyFilter";
 
 // isEnabled - Holds 'enabled' state of company filtering (set by 'enable()' and 'disable()')
 isEnabled = true;

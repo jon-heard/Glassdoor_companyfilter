@@ -1,4 +1,4 @@
-# Glassdoor company filter
+﻿# Glassdoor company filter
 
 This is a greasmonkey script that modifies glassdoor‘s excellent job search.
 
@@ -7,24 +7,23 @@ Each job post gets a "filter company" button added to it. If clicked, the post�
 <i>Note: It is in working condition, but rough around the edges.  I intend to add more console logging (for debugging purposes) and cleanup the web api to adhere to more closely follow RESTful precepts.</i>
 
 Requirements:
-1) Greasemonkey (a firefox plugin)
-2) A http server with php and mysql (to store company names)
+1) Firefox
+2) Greasemonkey (a firefox plugin)
+3) A http server with php and mysql (to store company names)
 
 Steps to get this script working:
-1) Add greasemonkey script (glassdoor_comanyFilter.user.js) into greasemonkey
-2) Place contents of the 'web' folder into a folder being served by the http server
-3) Run the sql file (sqlImport.sql) in your mysql database to add the 'filtered' table used by this script
-4) Modify the 'dbConnect.inc' file in the http server folder. Set the variables to connect to your mysql database:
-     - $host - The domain, url, etc (along with port if not standard)
-     - $username - The username to use to connect to the database
-     - $password - The password to use to connect to the database
-     - $database - The database in which the 'sqlImport.sql' script was run (contains the 'filtered' table)
-5) Modify the greasemonkey script (glassdoor_companyFilter.user.js).
-     Change the variable 'DATA_HOST' (first line of code) to the base url of the http server folder.
-6) Go to http://glassdoor.com and run a JOB search.
-     You should see a button 'Filter company' by each job posting.
-     Click on that button to filter out the posting's company from this and all future searches.
+1. Download all files
+2. Open 'glassdoor_companyFilter.user.js' into a text editor.  Change the variable 'DATA_HOST' (the first line of code) to match the base url of the http server.  For example, if the web files are hosted locally within the 'glassdoor_companyFilter' folder.
+  var DATA_HOST = "http://localhost/glassdoor_companyFilter";
+3. Open 'web/dbConnect.inc' into a text editor. Set the variables to connect to your mysql database:
+   - $host - The domain, url, etc (along with port if not standard)
+   - $username - The username to use to connect to the database
+   - $password - The password to use to connect to the database
+   - $database - The name of the database in which the 'filtered' table exists (where the 'sqlImport.sql' script was run)
+4. Place the contents of the 'web' folder onto the http server.
+5. Execute 'sqlImport.sql' in the mysql server (to setup required tables).
+6. Add 'glassdoor_companyFilter.js' to greasemonkey by dragging it into firefox.  A confirmation popup should be displayed.  Click 'Install' at the bottom of the popup.
 
 Troubleshooting:
 - If the script can't connect to the web server, it'll popup an alert when running a job search on glasddoor.
-- If you get no alert, but don't see filter buttons, The script logs everything to the java console.  I'd start there.
+- If you get no alert, but don't see filter buttons, The script logs all activity to the javascript console.  I'd start there.
